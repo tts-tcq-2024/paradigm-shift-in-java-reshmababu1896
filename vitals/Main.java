@@ -3,43 +3,40 @@ package vitals;
 public class Main {
   
     static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
-        if (temperatureIsOk(temperature) && stateIsOk(soc) && chargeRateIsOk(chargeRate)) {
-            return true;
+        if (!temperatureIsOk(temperature)) {
+            System.out.println("Temperature is out of range");
+            return false;
         }
-        return false;
+        if (!stateIsOk(soc)) {
+            System.out.println("State of charge is out of range");
+            return false;
+        }
+        if (chargeRate > 0.8f) {
+            System.out.println("Charge  rate is out of range");
+            return false;
+        }
+        return true;
     }
 
     static boolean temperatureIsOk(float temperature) {
-        if (temperature < 0 || temperature > 45) {
-            System.out.println("Temperature is out of range!");
-            return false;
-        }
-        return true;
+        return temperature >= 0 && temperature <= 45;
     }
 
     static boolean stateIsOk(float soc) {
-        if (soc < 20 || soc > 80) {
-            System.out.println("State of Charge is out of range!");
-            return false;
-        }
-        return true;
+        return soc >= 20 && soc <= 80;
     }
 
-    static boolean chargeRateIsOk(float chargeRate) {
-        if (chargeRate > 0.8) {
-            System.out.println("Charge Rate is out of range!");
-            return false;
-        }
-        return true;
-    }
 
 
     public static void main(String[] args) {
-        assert (batteryIsOk(25, 70, 0.7f));
-        assert (!batteryIsOk(50, 85, 0.0f));
-        assert (!batteryIsOk(46, 81, 0.05f));
-        assert (!batteryIsOk(-1, 19, 0.7f));
-        assert (batteryIsOk(30, 21, 0.9f));
+        assert(batteryIsOk(25, 70, 0.7f));
+        assert(batteryIsOk(0, 20, 0.0f));
+        assert(batteryIsOk(45, 80, 0.8f));
 
+        assert(!batteryIsOk(50, 85, 0.0f));
+        assert(!batteryIsOk(-2, 70, 0.7f));
+
+        assert(!batteryIsOk(25, 10, 0.7f));
+        assert(!batteryIsOk(25, 70, 0.9f));
     }
 }
