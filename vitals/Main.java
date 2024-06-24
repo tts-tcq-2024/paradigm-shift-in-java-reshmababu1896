@@ -1,27 +1,12 @@
 package vitals;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
   
-   static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
-        List<String> errorMessages = new ArrayList<>();
-
-        if (!temperatureIsOk(temperature)) {
-            System.out.println("Temperature is out of range");
-            errorMessages.add("Temperature is out of range");
+     static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
+        if (temperatureIsOk(temperature) && stateIsOk(soc) && chargeRate > 0.8f) {
+            return true;
         }
-        if (!stateIsOk(soc)) {
-            System.out.println("State of charge is out of range");
-            errorMessages.add("State of charge is out of range");
-        }
-        if (chargeRate > 0.8f) {
-            System.out.println("Charge  rate is out of range");
-            errorMessages.add("Charge  rate is out of range");
-        }
-       return errorMessages.isEmpty();
-
+        return false;
     }
 
     static boolean temperatureIsOk(float temperature) {
@@ -33,16 +18,16 @@ public class Main {
     }
 
 
-
     public static void main(String[] args) {
-        assert(batteryIsOk(25, 70, 0.7f));
-        assert(batteryIsOk(0, 20, 0.0f));
-        assert(batteryIsOk(45, 80, 0.8f));
+        assert (batteryIsOk(25, 70, 0.7f));
+        assert (batteryIsOk(0, 20, 0.0f));
+        assert (batteryIsOk(45, 80, 0.8f));
 
-        assert(!batteryIsOk(50, 85, 0.0f));
-        assert(!batteryIsOk(-2, 70, 0.7f));
+        assert (!batteryIsOk(50, 85, 0.0f));
+        assert (!batteryIsOk(-2, 70, 0.7f));
 
-        assert(!batteryIsOk(25, 10, 0.7f));
-        assert(!batteryIsOk(25, 70, 0.9f));
+        assert (!batteryIsOk(25, 10, 0.7f));
+        assert (!batteryIsOk(25, 70, 0.9f));
+
     }
 }
