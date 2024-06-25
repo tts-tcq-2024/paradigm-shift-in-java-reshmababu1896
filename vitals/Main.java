@@ -7,11 +7,11 @@ public class Main {
             System.out.println("Value is out of range temperature : "+temperature);
            return false;
         }
-        if (!stateIsOk(soc)) {
+       else if (!stateIsOk(soc)) {
             System.out.println("State of charge is out of range");
             return false;
         }
-        if (chargeRate > 0.8f) {
+       else if (chargeRate > 0.8f) {
             System.out.println("Charge  rate is out of range");
            return false;
         }
