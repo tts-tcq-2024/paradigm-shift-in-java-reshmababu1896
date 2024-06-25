@@ -3,8 +3,19 @@ package vitals;
 public class Main {
   
      static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
-       boolean tag=(temperature >= 0 && temperature <= 45) && (soc >= 20 && soc <= 80) && chargeRate > 0.8f;
-       return tag;
+       if (!temperatureIsOk(temperature) && !stateIsOk(soc) && chargeRate > 0.8f) {
+            // System.out.println("Temperature is out of range");
+           return false;
+        }
+        // if (!stateIsOk(soc)) {
+        //     System.out.println("State of charge is out of range");
+        //     return false;
+        // }
+        // if (chargeRate > 0.8f) {
+        //     System.out.println("Charge  rate is out of range");
+        //    return false;
+        // }
+       return true;
 
     }
 
