@@ -4,17 +4,9 @@ public class Main {
   
      static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
        if (!temperatureIsOk(temperature) || !stateIsOk(soc) || chargeRate > 0.8f) {
-            // System.out.println("Temperature is out of range");
+            System.out.println("Temperature limit is betwwen 0 to 45 the value received is"+temperature+" SOC limit is between 20 and 80 the value received is "+soc+" charged rate  value should be less than 0.8 the value received is "+chargeRate);
            return false;
         }
-        // if (!stateIsOk(soc)) {
-        //     System.out.println("State of charge is out of range");
-        //     return false;
-        // }
-        // if (chargeRate > 0.8f) {
-        //     System.out.println("Charge  rate is out of range");
-        //    return false;
-        // }
        return true;
 
     }
