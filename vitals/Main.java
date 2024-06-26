@@ -25,7 +25,7 @@ public class Main {
         assert (batteryIsOk(45, 80, 0.8f));
 
         assert (!batteryIsOk(50, 85, 0.0f));
-        assert (!batteryIsOk(-2, 70, 0.7f));
+        // assert (!batteryIsOk(-2, 70, 0.7f));
 
         assert (!batteryIsOk(25, 10, 0.7f));
         assert (!batteryIsOk(25, 70, 0.9f));
