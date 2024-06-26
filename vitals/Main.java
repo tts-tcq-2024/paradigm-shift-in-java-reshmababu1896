@@ -6,7 +6,7 @@ public class Main {
     static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
         Logger.getAnonymousLogger().info((temperatureIsOk(temperature) ? "Temperature out of range" : (stateIsOk(soc) ? "State of charge out of range" : ((chargeRate > 0.8f) ? "Charge of rate is out of range" : "Values are valid"))));
         boolean flag = (temperatureIsOk(temperature) || stateIsOk(soc) || chargeRate > 0.8f) ? false : true;
-        return true;
+        return flag;
 
     }
 
@@ -25,7 +25,7 @@ public class Main {
         assert (batteryIsOk(45, 80, 0.8f));
 
         assert (!batteryIsOk(50, 85, 0.0f));
-        // assert (!batteryIsOk(-2, 70, 0.7f));
+        assert (!batteryIsOk(-2, 70, 0.7f));
 
         assert (!batteryIsOk(25, 10, 0.7f));
         assert (!batteryIsOk(25, 70, 0.9f));
