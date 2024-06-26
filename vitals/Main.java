@@ -2,9 +2,8 @@ package vitals;
 import java.util.logging.Logger;
 
 public class Main {
-  
     static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
-        // Logger.getAnonymousLogger().info(temperatureIsOk(temperature) ? "Temperature out of range" : stateIsOk(soc) ? "State of charge out of range" : chargeRate > 0.8f ? "Charge of rate is out of range" : "Values are valid");
+        Logger.getAnonymousLogger().info(temperatureIsOk(temperature) ? "Temperature out of range" : stateIsOk(soc) ? "State of charge out of range" : chargeRate > 0.8f ? "Charge of rate is out of range" : "Values are valid");
         return temperatureIsOk(temperature) && stateIsOk(soc) && chargeRate > 0.8f;
     }
 
