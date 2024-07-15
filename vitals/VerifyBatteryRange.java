@@ -10,7 +10,7 @@ public class VerifyBatteryRange {
     static boolean validateTemperatureIsOk(float temperature) {
         boolean validValue=true;
         if(temperature < 0 || temperature > 45){
-            printValueOutOfRangeMessage("Temperature out of range");
+            printMessageOnConsole("Temperature out of range");
             validValue=false;
         }
         return validValue;
@@ -19,7 +19,7 @@ public class VerifyBatteryRange {
     static boolean validateStateIsOk(float soc) {
         boolean validValue=true;
         if(soc < 20 || soc > 80){
-            printValueOutOfRangeMessage("State of charge is out of range");
+            printMessageOnConsole("State of charge is out of range");
             validValue=false;
         }
         return validValue;
@@ -28,13 +28,13 @@ public class VerifyBatteryRange {
     static boolean validateChargeIsOk(float chargeRate) {
         boolean validValue=true;
         if(chargeRate>0.8f){
-           printValueOutOfRangeMessage("Charge of rate is out of range");
+           printMessageOnConsole("Charge of rate is out of range");
             validValue=false;
         }
         return validValue;
     }
      
-     static void printValueOutOfRangeMessage(String message){
+     static void printMessageOnConsole(String message){
           System.out.println(message);
      }
   
