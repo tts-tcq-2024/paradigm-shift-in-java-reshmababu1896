@@ -1,7 +1,7 @@
 package vitals;
 import java.util.logging.Logger;
 
-public class Main {
+public class VerifyBatteryRange {
      static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
         return temperatureIsOk(temperature) && stateIsOk(soc) && chargeIsOk(chargeRate);
     }
