@@ -30,7 +30,7 @@ public class CalculateBatteryRange {
         // else{
         //     value=true;
         // }
-        System.out.println("For the value "+param+" status"+value+"  "+message);
+        System.out.println("For the value "+param+" status "+value+"  "+message);
        return value;
     }
 }
