@@ -30,7 +30,7 @@ public class VerifyBatteryRange {
        tempConditionList=GenerateWarningList.generateTempConditions();
        socConditionList=GenerateWarningList.generateSOCConditionList();
        rocConditionList=GenerateWarningList.generateRateOfChargeConditions();
-         verifyBatteryIsOk(25, 10, 0.7f);
+        System.out.println("***"+verifyBatteryIsOk(25, 10, 0.7f));
         // assert (verifyBatteryIsOk(25, 70, 0.7f));
         // assert (verifyBatteryIsOk(0, 20, 0.0f));
         // assert (verifyBatteryIsOk(45, 80, 0.8f));
