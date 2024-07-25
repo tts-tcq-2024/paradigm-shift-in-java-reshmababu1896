@@ -22,14 +22,15 @@ public class CalculateBatteryRange {
         return flag;
     }
 
-    protected static boolean printMessage(Float param,String message){
+     protected static boolean printMessage(Float param,String message){
        boolean value=true;
         if(message.contains(("BREACH")) ){
             value= false;
-        } else{
-            value=true;
-        }
-        System.out.println("For the value "+param+" "+message);
+        } 
+        // else{
+        //     value=true;
+        // }
+        System.out.println("For the value "+param+" status"+value+"  "+message);
        return value;
     }
 }
