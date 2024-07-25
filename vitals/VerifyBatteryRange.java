@@ -10,8 +10,11 @@ public class VerifyBatteryRange {
      
      static boolean verifyBatteryIsOk(float temperature, float soc, float chargeRate) {
           boolean tempok=validateTemperatureIsOk(temperature);
+          System.out.println("Temperature "+tempok);
         boolean socOk=validateStateIsOk(soc);
+           System.out.println("soc "+socOk);
         boolean rateOk= validateChargeIsOk(chargeRate);
+           System.out.println("chargeRate "+rateOk);
         return tempok && socOk && rateOk;
         // return validateTemperatureIsOk(temperature) && validateStateIsOk(soc) && validateChargeIsOk(chargeRate);
     }
