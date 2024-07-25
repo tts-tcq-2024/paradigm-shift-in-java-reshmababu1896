@@ -12,7 +12,7 @@ public class VerifyBatteryRange {
           boolean tempok=validateTemperatureIsOk(temperature);
         boolean socOk=validateStateIsOk(soc);
         boolean rateOk= validateChargeIsOk(chargeRate);
-        return tempok || socOk || rateOk;
+        return tempok && socOk && rateOk;
         // return validateTemperatureIsOk(temperature) && validateStateIsOk(soc) && validateChargeIsOk(chargeRate);
     }
 
