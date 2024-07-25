@@ -14,12 +14,12 @@ public class CalculateBatteryRange {
         return validValue;
     }
 
-    protected static boolean verifyMinMaxRange(float value, RangeConditions range){
+  protected static boolean verifyMinMaxRange(float value, RangeConditions range){
+      boolean flag=true;
         if(value>range.getMin() && value< range.getMax()){
-//            System.out.println(range.getMessage());
-            return printMessage(value,range.getMessage());
+            flag= printMessage(value,range.getMessage());
         }
-        return true;
+        return flag;
     }
 
     protected static boolean printMessage(Float param,String message){
