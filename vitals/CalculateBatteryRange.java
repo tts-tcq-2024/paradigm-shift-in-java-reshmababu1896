@@ -17,19 +17,19 @@ public class CalculateBatteryRange {
     protected static boolean verifyMinMaxRange(float value, RangeConditions range){
         if(value>range.getMin() && value< range.getMax()){
 //            System.out.println(range.getMessage());
-            return printMessage(range.getMessage());
+            return printMessage(value,range.getMessage());
         }
         return true;
     }
 
-    protected static boolean printMessage(String message){
+    protected static boolean printMessage(Float param,String message){
        boolean value=true;
         if(message.equals("NORMAL")){
             value= true;
         } else{
             value=false;
         }
-        System.out.println(message);
+        System.out.println("For the value "+param+" "+message);
        return value;
     }
 }
