@@ -24,10 +24,10 @@ public class CalculateBatteryRange {
 
     protected static boolean printMessage(Float param,String message){
        boolean value=true;
-        if(message.equals("NORMAL")){
-            value= true;
+        if(message.contains(("BREACH")) ){
+            value= false;
         } else{
-            value=false;
+            value=true;
         }
         System.out.println("For the value "+param+" "+message);
        return value;
