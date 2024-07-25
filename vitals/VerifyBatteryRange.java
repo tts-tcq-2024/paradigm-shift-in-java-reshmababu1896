@@ -9,7 +9,11 @@ public class VerifyBatteryRange {
     static List<RangeConditions> rocConditionList = new ArrayList<>();
      
      static boolean verifyBatteryIsOk(float temperature, float soc, float chargeRate) {
-        return validateTemperatureIsOk(temperature) && validateStateIsOk(soc) && validateChargeIsOk(chargeRate);
+          boolean tempok=validateTemperatureIsOk(temperature);
+        boolean socOk=validateStateIsOk(soc);
+        boolean rateOk= validateChargeIsOk(chargeRate);
+        return tempok && socOk && rateOk;
+        // return validateTemperatureIsOk(temperature) && validateStateIsOk(soc) && validateChargeIsOk(chargeRate);
     }
 
     static boolean validateTemperatureIsOk(float temperature) {
