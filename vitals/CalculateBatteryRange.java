@@ -18,7 +18,7 @@ public class CalculateBatteryRange {
     }
 
   protected static boolean verifyMinMaxRange(float value, RangeConditions range){
-      boolean flag;
+      boolean flag=true;
         if(value>range.getMin() && value< range.getMax()){
             flag= printMessage(value,range.getMessage());
         }
