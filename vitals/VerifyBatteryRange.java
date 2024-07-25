@@ -39,7 +39,7 @@ public class VerifyBatteryRange {
         // assert (verifyBatteryIsOk(0, 20, 0.0f));
         // assert (verifyBatteryIsOk(45, 80, 0.8f));
       
-        assert (!verifyBatteryIsOk(25, 10, 0.7f));
-        // assert (!verifyBatteryIsOk(25, 70, 0.9f));
+        // assert (!verifyBatteryIsOk(25, 10, 0.7f));
+        assert (!verifyBatteryIsOk(25, 70, 0.9f));
     }
 }
