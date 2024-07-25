@@ -45,7 +45,7 @@ public class GenerateWarningList {
     protected static List<RangeConditions> generateTempConditions(){
         tempConditions.add(new RangeConditions( -2.25f, 0, "LOW_TEMP_BREACH"));
         tempConditions.add(new RangeConditions(0, 2.25f, "LOW_TEMP_WARNING"));
-        tempConditions.add(new RangeConditions( (float) 2.25f, 4, "NORMAL"));
+        tempConditions.add(new RangeConditions(2.25f, 42.75f, "NORMAL"));
         tempConditions.add(new RangeConditions(42.75f, 45, "HIGH_TEMP_WARNING"));
         tempConditions.add(new RangeConditions(45, 100, "HIGH_TEMP_BREACH"));
 
