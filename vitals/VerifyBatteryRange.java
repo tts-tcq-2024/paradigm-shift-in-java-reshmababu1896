@@ -9,14 +9,7 @@ public class VerifyBatteryRange {
     static List<RangeConditions> rocConditionList = new ArrayList<>();
      
      static boolean verifyBatteryIsOk(float temperature, float soc, float chargeRate) {
-          boolean tempok=validateTemperatureIsOk(temperature);
-          System.out.println("Temperature "+tempok);
-        boolean socOk=validateStateIsOk(soc);
-           System.out.println("soc "+socOk);
-        boolean rateOk= validateChargeIsOk(chargeRate);
-           System.out.println("chargeRate "+rateOk);
-        return tempok && socOk && rateOk;
-        // return validateTemperatureIsOk(temperature) && validateStateIsOk(soc) && validateChargeIsOk(chargeRate);
+        return validateTemperatureIsOk(temperature) && validateStateIsOk(soc) && validateChargeIsOk(chargeRate);
     }
 
     static boolean validateTemperatureIsOk(float temperature) {
@@ -37,12 +30,12 @@ public class VerifyBatteryRange {
        tempConditionList=GenerateWarningList.generateTempConditions();
        socConditionList=GenerateWarningList.generateSOCConditionList();
        rocConditionList=GenerateWarningList.generateRateOfChargeConditions();
-        System.out.println("***"+verifyBatteryIsOk(25, 10, 0.7f));
-        // assert (verifyBatteryIsOk(25, 70, 0.7f));
-        // assert (verifyBatteryIsOk(0, 20, 0.0f));
-        // assert (verifyBatteryIsOk(45, 80, 0.8f));
+       
+        assert (verifyBatteryIsOk(25, 70, 0.7f));
+        assert (verifyBatteryIsOk(0, 20, 0.0f));
+        assert (verifyBatteryIsOk(45, 80, 0.8f));
       
-        // assert (!verifyBatteryIsOk(25, 10, 0.7f));
+        assert (!verifyBatteryIsOk(25, 10, 0.7f));
         assert (!verifyBatteryIsOk(25, 70, 0.9f));
     }
 }
