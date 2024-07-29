@@ -1,5 +1,7 @@
 # paradigm-shift-java
 
+Extended code to include warning levels 
+
 # Programming Paradigms
 
 Electric Vehicles have BMS - Battery Management Systems
