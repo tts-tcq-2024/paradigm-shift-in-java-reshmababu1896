@@ -20,18 +20,23 @@ public class CalculateBatteryRange {
   protected static boolean verifyMinMaxRange(float value, RangeConditions range){
       boolean flag=true;
         if(value>range.getMin() && value< range.getMax()){
-            flag= printMessage(value,range.getMessage());
+            flag= CheckBreach(value,range.getMessage());
         }
         return flag;
     }
 
-     protected static boolean printMessage(Float param,String message){
+     protected static boolean CheckBreach(Float param,String message){
        boolean value=true;
         if(message.contains(("BREACH")) ){
             value= false;
         } 
-       
-        System.out.println("For the value "+param+" status "+value+"  "+message);
+       printMessage(param,message, value);
+        
        return value;
+    }
+
+    private static void printMessage(Float param, String message, booleam value){
+        
+        System.out.println("For the value "+param+" status "+value+"  "+message);
     }
 }
