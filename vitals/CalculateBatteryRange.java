@@ -35,7 +35,7 @@ public class CalculateBatteryRange {
        return value;
     }
 
-    private static void printMessage(Float param, String message, booleam value){
+    private static void printMessage(Float param, String message, boolean value){
         
         System.out.println("For the value "+param+" status "+value+"  "+message);
     }
